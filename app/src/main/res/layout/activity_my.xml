@@ -13,7 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginLeft="@dimen/activity_horizontal_margin"
         android:layout_marginStart="@dimen/activity_horizontal_margin"
-        android:text="@string/hello_world" />
+        android:text="@string/hello_world"
+        android:id="@+id/textView" />
 
     <com.google.android.gms.ads.doubleclick.PublisherAdView
         android:id="@+id/ad_view"
@@ -23,5 +24,16 @@
         android:layout_centerHorizontal="true"
         ads:adSize="BANNER"
         ads:adUnitId="@string/ad_unit_id" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/textView"
+        android:layout_alignStart="@+id/textView"
+        android:layout_below="@+id/textView"
+        android:layout_marginTop="17dp"
+        android:onClick="sendMessage"
+        android:text="@string/native_styles_button" />
 
 </RelativeLayout>

@@ -15,8 +15,11 @@
  */
 package com.google.android.gms.example.bannerexample;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.View;
+import android.widget.EditText;
 
 import com.google.android.gms.ads.doubleclick.PublisherAdRequest;
 import com.google.android.gms.ads.doubleclick.PublisherAdView;
@@ -25,6 +28,8 @@ import com.google.android.gms.ads.doubleclick.PublisherAdView;
  * Main Activity. Inflates main activity xml and child fragments.
  */
 public class MyActivity extends AppCompatActivity {
+
+    public static final String EXTRA_MESSAGE = "com.example.myfirstapp.MESSAGE";
 
     private PublisherAdView adView;
 
@@ -45,6 +50,15 @@ public class MyActivity extends AppCompatActivity {
         // Start loading the ad in the background.
         adView.loadAd(adRequest);
     }
+
+    /** Called when the user taps the Native Styles button */
+    public void sendMessage(View view) {
+        Intent intent = new Intent(this, NativeActivity.class);
+        String message = "The Message";
+        intent.putExtra(EXTRA_MESSAGE, message);
+        startActivity(intent);
+    }
+
 
     /** Called when leaving the activity */
     @Override
